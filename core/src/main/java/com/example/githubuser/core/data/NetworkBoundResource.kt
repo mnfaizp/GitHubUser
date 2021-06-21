@@ -1,3 +1,5 @@
+@file:Suppress("RemoveExplicitTypeArguments")
+
 package com.example.githubuser.core.data
 
 import com.example.githubuser.core.data.source.remote.network.ApiResponse

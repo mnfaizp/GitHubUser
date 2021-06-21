@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class LocalDataSource @Inject constructor(private val userDao: com.example.githubuser.core.data.source.local.room.UserDao) {
 
-    fun getAllUser(): Flow<List<com.example.githubuser.core.data.source.local.entity.UserEntity>> =
+    fun getAllUser(): Flow<List<UserEntity>> =
         userDao.getAllUser()
 
     fun getUser(userId: String?): Flow<UserEntity> =
@@ -16,7 +16,7 @@ class LocalDataSource @Inject constructor(private val userDao: com.example.githu
 
     fun getFavoriteUser() = userDao.getAllFavoriteUsers()
 
-    suspend fun insertUser(userList: List<com.example.githubuser.core.data.source.local.entity.UserEntity>) =
+    suspend fun insertUser(userList: List<UserEntity>) =
         userDao.insertUser(userList)
 
     fun setFavoriteUser(

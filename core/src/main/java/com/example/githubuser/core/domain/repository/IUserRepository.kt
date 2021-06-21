@@ -5,7 +5,7 @@ import com.example.githubuser.core.domain.model.User
 import kotlinx.coroutines.flow.Flow
 
 interface IUserRepository {
-    fun getAllUser(): Flow<com.example.githubuser.core.data.Resource<List<User>>>
+    fun getAllUser(): Flow<Resource<List<User>>>
 
     fun getFavoriteUsers(): Flow<List<User>>
 

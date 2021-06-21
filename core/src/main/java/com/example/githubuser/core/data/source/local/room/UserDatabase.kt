@@ -9,5 +9,5 @@ import androidx.room.RoomDatabase
     exportSchema = false
 )
 abstract class UserDatabase : RoomDatabase() {
-    abstract fun userDao(): com.example.githubuser.core.data.source.local.room.UserDao
+    abstract fun userDao(): UserDao
 }

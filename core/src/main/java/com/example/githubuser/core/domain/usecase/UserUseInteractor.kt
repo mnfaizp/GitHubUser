@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class UserUseInteractor @Inject constructor(private val userRepository: IUserRepository) :
     UserUseCase {
-    override fun getAllUser(): Flow<com.example.githubuser.core.data.Resource<List<User>>> {
+    override fun getAllUser(): Flow<Resource<List<User>>> {
         return userRepository.getAllUser()
     }
 

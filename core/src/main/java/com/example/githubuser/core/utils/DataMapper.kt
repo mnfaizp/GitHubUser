@@ -8,11 +8,11 @@ import com.example.githubuser.core.domain.model.UserDetail
 
 object DataMapper {
 
-    fun mapResponseToEntity(input: List<UserResponse>): List<com.example.githubuser.core.data.source.local.entity.UserEntity> {
-        val userList = ArrayList<com.example.githubuser.core.data.source.local.entity.UserEntity>()
+    fun mapResponseToEntity(input: List<UserResponse>): List<UserEntity> {
+        val userList = ArrayList<UserEntity>()
 
         input.map {
-            val user = com.example.githubuser.core.data.source.local.entity.UserEntity(
+            val user = UserEntity(
                 userId = it.login,
                 login = it.login,
                 isFavorite = false,
@@ -25,7 +25,7 @@ object DataMapper {
         return userList
     }
 
-    fun mapEntitiesToDomain(input: List<com.example.githubuser.core.data.source.local.entity.UserEntity>): List<User> =
+    fun mapEntitiesToDomain(input: List<UserEntity>): List<User> =
         input.map {
             User(
                 userId = it.userId,
@@ -40,7 +40,7 @@ object DataMapper {
 
     fun mapDomainToEntity(input: User) =
         input.userDetail?.let {
-            com.example.githubuser.core.data.source.local.entity.UserEntity(
+            UserEntity(
                 userId = input.userId,
                 login = input.login,
                 url = input.url,

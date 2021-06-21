@@ -18,7 +18,7 @@ class UserRepository @Inject constructor(
     private val localDataSource: com.example.githubuser.core.data.source.local.LocalDataSource,
     private val appExecutors: AppExecutors
 ) : IUserRepository {
-    override fun getAllUser(): Flow<com.example.githubuser.core.data.Resource<List<User>>> =
+    override fun getAllUser(): Flow<Resource<List<User>>> =
         object :
             com.example.githubuser.core.data.NetworkBoundResource<List<User>, List<UserResponse>>() {
             override fun loadFromDB(): Flow<List<User>> {

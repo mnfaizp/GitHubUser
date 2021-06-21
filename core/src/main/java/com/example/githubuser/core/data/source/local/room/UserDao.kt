@@ -8,13 +8,13 @@ import kotlinx.coroutines.flow.Flow
 interface UserDao {
 
     @Query("SELECT * FROM users")
-    fun getAllUser(): Flow<List<com.example.githubuser.core.data.source.local.entity.UserEntity>>
+    fun getAllUser(): Flow<List<UserEntity>>
 
     @Query("SELECT * FROM users WHERE isFavorite = 1")
-    fun getAllFavoriteUsers(): Flow<List<com.example.githubuser.core.data.source.local.entity.UserEntity>>
+    fun getAllFavoriteUsers(): Flow<List<UserEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertUser(userList: List<com.example.githubuser.core.data.source.local.entity.UserEntity>)
+    suspend fun insertUser(userList: List<UserEntity>)
 
     @Update
     fun updateUser(user: UserEntity?)
