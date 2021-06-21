@@ -6,13 +6,11 @@
     tools:context=".home.HomeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_users"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_recycler_user" />
 
     <ProgressBar
-        android:id="@+id/progress_bar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +19,6 @@
         android:visibility="gone" />
 
     <include
-        android:id="@+id/view_error"
         layout="@layout/view_error"
         android:visibility="gone" />
 

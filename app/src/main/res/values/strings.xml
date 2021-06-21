@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">GitHubUser</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
@@ -10,13 +8,10 @@
     <string name="menu_home">Home</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="menu_favorite">Favorite User</string>
     <string name="avatar_picture_description">Avatar Picture</string>
     <string name="fab_fav_description">Press this button if you want to save favorite</string>
-    <string name="empty_fav_user">No Favorite User</string>
     <string name="something_wrong">Oops.. something went wrong</string>
-    <string name="title_favorite">Favorite</string>
     <string name="home_title">Home</string>
     <string name="favorite_title">Favorite Users</string>
     <string name="repository_label">Repository</string>
