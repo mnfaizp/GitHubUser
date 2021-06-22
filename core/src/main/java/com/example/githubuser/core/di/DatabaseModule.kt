@@ -2,11 +2,15 @@ package com.example.githubuser.core.di
 
 import android.content.Context
 import androidx.room.Room
+import com.example.githubuser.core.data.source.local.room.UserDao
+import com.example.githubuser.core.data.source.local.room.UserDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import javax.inject.Singleton
 
 @Module
@@ -15,13 +19,15 @@ class DatabaseModule {
 
     @Singleton
     @Provides
-    fun provideDatabase(@ApplicationContext context: Context): com.example.githubuser.core.data.source.local.room.UserDatabase =
+    fun provideDatabase(@ApplicationContext context: Context): UserDatabase =
         Room.databaseBuilder(
             context,
-            com.example.githubuser.core.data.source.local.room.UserDatabase::class.java, "User.db"
-        ).fallbackToDestructiveMigration().build()
+            UserDatabase::class.java, "User.db"
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(SupportFactory(SQLiteDatabase.getBytes("myMineDecipher".toCharArray())))
+            .build()
 
     @Provides
-    fun provideUserDao(database: com.example.githubuser.core.data.source.local.room.UserDatabase): com.example.githubuser.core.data.source.local.room.UserDao =
+    fun provideUserDao(database: UserDatabase): UserDao =
         database.userDao()
 }

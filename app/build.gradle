@@ -45,6 +45,7 @@ dependencies {
 
     implementation project(":core")
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "com.squareup.leakcanary:leakcanary-android:2.4"
 
     //navigation
     api "androidx.navigation:navigation-fragment-ktx:$nav_version"
