@@ -1,3 +1,5 @@
+@file:Suppress("SpellCheckingInspection", "SpellCheckingInspection", "SpellCheckingInspection")
+
 package com.example.githubuser.core.di
 
 import com.example.githubuser.core.data.source.remote.network.ApiService

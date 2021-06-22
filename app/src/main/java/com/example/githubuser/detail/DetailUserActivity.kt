@@ -36,7 +36,10 @@ class DetailUserActivity : AppCompatActivity() {
                 if (user != null) {
                     when (user) {
                         is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
-                        is Resource.Success -> showDetailUser(user.data)
+                        is Resource.Success -> {
+                            binding.progressBar.visibility = View.GONE
+                            showDetailUser(user.data)
+                        }
                         is Resource.Error -> {
                             binding.progressBar.visibility = View.GONE
                             binding.viewError.root.visibility = View.VISIBLE
